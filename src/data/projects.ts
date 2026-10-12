@@ -9,6 +9,12 @@ export const categoryLabels: Record<Category, string> = {
 
 export type ProjectLink = { label: string; url: string };
 
+export type MetricKind = "Audience growth" | "Reported reach" | "Model output" | "Research finding";
+export type Metric = { value: number; prefix?: string; suffix?: string; decimals?: number; label: string; kind: MetricKind };
+
+/** How the visual preview is framed: document page, browser window, or portrait video. */
+export type PreviewFrame = "document" | "browser" | "video";
+
 export type Project = {
   slug: string;
   title: string;
@@ -20,9 +26,19 @@ export type Project = {
   role?: string;
   deliverable?: string;
   note?: string;
+  objective?: string;
+  approach?: string;
+  findings?: string;
+  /** Optional image URL override. By default a preview is picked up automatically from src/assets/previews/<slug>.* */
+  thumbnail?: string;
+  gallery?: string[];
+  metrics?: Metric[];
   links: ProjectLink[];
   featured?: boolean;
 };
+
+export const previewFrame = (p: Project): PreviewFrame =>
+  p.category === "video" ? "video" : p.category === "data" ? "browser" : "document";
 
 const x = (id: string) => `https://x.com/princess_i5/status/${id}`;
 
@@ -114,6 +130,7 @@ export const projects: Project[] = [
     summary: "A collection of social content explaining LayerZero and cross-chain interoperability.",
     tools: ["Content Strategy", "Social Media Content", "Educational Content"],
     deliverable: "Four X posts",
+    metrics: [{ value: 30000, suffix: "+", label: "Total X impressions reported", kind: "Reported reach" }],
     links: [
       { label: "Post 1", url: x("2012098621001367747") },
       { label: "Post 2", url: x("1972990110019776926") },
@@ -193,6 +210,10 @@ export const projects: Project[] = [
     summary: "Machine learning application for detecting unusual patterns in health-related data.",
     tools: ["Python", "Machine Learning", "Anomaly Detection", "Streamlit"],
     deliverable: "Interactive Streamlit app",
+    metrics: [
+      { value: 50000, label: "Patient records analyzed", kind: "Model output" },
+      { value: 2500, label: "Statistical anomalies flagged", kind: "Model output" },
+    ],
     links: [{ label: "Open live app", url: "https://iomt-anomaly-detection.streamlit.app/" }],
   },
   {
@@ -202,6 +223,10 @@ export const projects: Project[] = [
     summary: "Machine learning project using customer attributes to identify different customer groups.",
     tools: ["Python", "Customer Segmentation", "Machine Learning"],
     deliverable: "Hugging Face Space",
+    metrics: [
+      { value: 200, prefix: "~", label: "Customers analyzed", kind: "Model output" },
+      { value: 5, label: "Customer segments identified", kind: "Model output" },
+    ],
     links: [{ label: "Open on Hugging Face", url: "https://huggingface.co/spaces/Prifea/mall-customers" }],
   },
   {
@@ -265,8 +290,8 @@ projects.push({
 
 export const featuredOrder = [
   "morpho-research",
-  "yoga-band-sales-copy",
   "layerzero-content",
+  "yoga-band-sales-copy",
   "ronin-segmentation",
   "mantlepulse",
   "tech-ugc",
@@ -288,4 +313,22 @@ export const contact = {
     { label: "TikTok", url: "https://www.tiktok.com/@theifelove" },
     { label: "Instagram", url: "https://www.instagram.com/ifeoluwa_writes/" },
   ],
+};
+
+/** Self-reported results from the resume, attributed to each project. Not independently audited. */
+export const impact = {
+  bob: { project: "BOB Nigeria", before: 58, after: 1000, growth: 1624 },
+  items: [
+    { project: "LayerZero", metric: { value: 30000, suffix: "+", label: "Total X impressions reported", kind: "Reported reach" } },
+    { project: "Mall Customer Segmentation", metric: { value: 5, label: "Customer segments from ~200 customers", kind: "Model output" } },
+    { project: "IoMT Vitals Anomaly Detection", metric: { value: 2500, label: "Anomalies flagged across 50,000 records", kind: "Model output" } },
+    { project: "DRID AI Research", metric: { value: 81.6, decimals: 1, suffix: "%", label: "Overall accuracy observed on 250 university-level questions", kind: "Research finding" } },
+  ] satisfies { project: string; metric: Metric }[],
+};
+
+/** Replace with real files when available. Leave undefined to show a labelled placeholder / hide the button. */
+export const profile: { portrait?: string; aboutPhoto?: string; resumeUrl?: string } = {
+  portrait: undefined,
+  aboutPhoto: undefined,
+  resumeUrl: undefined,
 };
