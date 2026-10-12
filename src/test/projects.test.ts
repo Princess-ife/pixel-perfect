@@ -3,7 +3,7 @@ import { featuredOrder, filterProjects, getProject } from "@/data/projects";
 
 describe("projects", () => {
   it("Mall Customer Segmentation links to its Hugging Face space", () => {
-    expect(getProject("mall-customer-segmentation")?.links[0].url).toBe("https://huggingface.co/spaces/Prifea/mall-customers");
+    expect(getProject("mall-customer-segmentation")?.links[0]?.url).toBe("https://huggingface.co/spaces/Prifea/mall-customers");
   });
   it("filters return only the chosen category", () => {
     expect(filterProjects("data").every((p) => p.category === "data")).toBe(true);
