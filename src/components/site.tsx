@@ -323,7 +323,7 @@ export function VideoGallery() {
               {thumb ? (
                 <img src={thumb} alt={`Thumbnail for ${v.title}`} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
               ) : (
-                <UploadPlaceholder label="Video thumbnail" className="border-0" />
+                <UploadPlaceholder label="Video thumbnail" className="!justify-start border-0 pt-10" />
               )}
               <span className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
               <span className="absolute left-1/2 top-1/2 grid h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-background/60 backdrop-blur transition-transform group-hover:scale-110">

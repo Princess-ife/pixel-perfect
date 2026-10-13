@@ -9,3 +9,5 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 - All portfolio content (projects, videos, contact links) lives in src/data/projects.ts; pages render from it so updates happen in one place.
+- Project preview images are pointers in src/assets/previews/<slug>.*.asset.json and video thumbnails in src/assets/videos/<video-slug>.*.asset.json, auto-matched by filename in src/data/previews.ts; missing ones render a labelled upload placeholder.
+- Portrait, about photo and resume live in the `profile` object in src/data/projects.ts; undefined shows a placeholder (resume button stays disabled).
