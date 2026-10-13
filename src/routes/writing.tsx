@@ -26,7 +26,7 @@ function Writing() {
       <PageIntro eyebrow="Writing" title="Words that make complex things clear.">
         Research, technical and educational writing, plus copywriting samples. Full pieces open at their original source.
       </PageIntro>
-      <section className="mx-auto max-w-6xl px-5 pb-24">
+      <section className="mx-auto max-w-7xl px-5 pb-24">
         <div role="group" aria-label="Filter writing" className="flex flex-wrap gap-2">
           {types.map((t) => (
             <FilterChip key={t} active={type === t} onClick={() => setType(t)}>{t}</FilterChip>
