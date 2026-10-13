@@ -125,7 +125,7 @@ function useInView<T extends Element>() {
   return [ref, visible] as const;
 }
 
-export function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
+export function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string | undefined; delay?: number }) {
   const [ref, visible] = useInView<HTMLDivElement>();
   return (
     <div ref={ref} data-visible={visible} style={{ transitionDelay: `${delay}ms` }} className={`scroll-reveal ${className}`}>
@@ -397,7 +397,7 @@ export function PageIntro({ eyebrow, title, children }: { eyebrow: string; title
   );
 }
 
-export function Portrait({ src, label, className = "" }: { src?: string; label: string; className?: string }) {
+export function Portrait({ src, label, className = "" }: { src?: string | undefined; label: string; className?: string }) {
   return (
     <div className={`relative ${className}`}>
       <div aria-hidden className="glow-orb absolute -inset-10" />

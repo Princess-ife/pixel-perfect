@@ -327,7 +327,7 @@ export const impact = {
 };
 
 /** Replace with real files when available. Leave undefined to show a labelled placeholder / hide the button. */
-export const profile: { portrait?: string; aboutPhoto?: string; resumeUrl?: string } = {
+export const profile: { portrait?: string | undefined; aboutPhoto?: string | undefined; resumeUrl?: string | undefined } = {
   portrait: undefined,
   aboutPhoto: undefined,
   resumeUrl: undefined,
