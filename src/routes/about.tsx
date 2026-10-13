@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageIntro } from "@/components/site";
+import { Download } from "lucide-react";
+import { PageIntro, Portrait, Reveal } from "@/components/site";
+import { profile } from "@/data/projects";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -24,9 +26,25 @@ function About() {
   return (
     <>
       <PageIntro eyebrow="About" title="My work sits at the intersection of storytelling, technology, and data." />
-      <section className="mx-auto grid max-w-6xl gap-10 px-5 pb-20 md:grid-cols-[1fr_2fr]">
-        <div />
-        <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
+      <section className="mx-auto grid max-w-7xl gap-14 px-5 pb-24 md:grid-cols-[1fr_1.6fr]">
+        <div>
+          <Portrait src={profile.aboutPhoto ?? profile.portrait} label="Second photo goes here" className="aspect-[3/4] w-full max-w-sm" />
+          <div className="mt-8 grid grid-cols-2 gap-3 text-sm">
+            {["Writing", "Research", "Data", "Video"].map((d) => (
+              <div key={d} className="rounded-xl border bg-card px-4 py-3 font-display">{d}</div>
+            ))}
+          </div>
+          {profile.resumeUrl ? (
+            <a href={profile.resumeUrl} download className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-accent px-6 py-3 text-sm font-medium text-primary-foreground">
+              <Download className="h-4 w-4" /> Download Resume
+            </a>
+          ) : (
+            <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-dashed px-5 py-2.5 text-xs uppercase tracking-widest text-muted-foreground">
+              <Download className="h-4 w-4" /> Resume PDF — upload to enable download
+            </p>
+          )}
+        </div>
+        <div className="space-y-6 self-center text-xl leading-relaxed text-muted-foreground">
           <p>
             I've worked on content marketing and educational campaigns for technology brands, written research-driven
             articles about emerging industries, and built analytical projects that explore user behaviour, market
@@ -45,11 +63,11 @@ function About() {
         </div>
       </section>
       <section className="border-t">
-        <div className="mx-auto max-w-6xl px-5 py-20">
+        <div className="mx-auto max-w-7xl px-5 py-20">
           <p className="eyebrow">Skills</p>
           <div className="mt-10 grid gap-px overflow-hidden rounded-xl border bg-border sm:grid-cols-2">
             {skills.map((s) => (
-              <div key={s.title} className="bg-background p-8">
+              <div key={s.title} className="bg-card p-8">
                 <h2 className="text-2xl font-medium">{s.title}</h2>
                 <ul className="mt-5 flex flex-wrap gap-2">
                   {s.items.map((i) => (

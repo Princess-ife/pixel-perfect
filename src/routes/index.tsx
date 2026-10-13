@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import { ContactBlock, ProjectCard } from "@/components/site";
-import { featuredOrder, getProject } from "@/data/projects";
+import { ContactBlock, Portrait, ProjectCard, Reveal } from "@/components/site";
+import { ImpactSection } from "@/components/impact";
+import { featuredOrder, getProject, profile } from "@/data/projects";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -15,57 +16,74 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+// Asymmetric layout slots for the six featured entries
+const slots = [
+  { cls: "lg:col-span-7", size: "lg" },
+  { cls: "lg:col-span-5", size: "lg" },
+  { cls: "lg:col-span-3", size: "md" },
+  { cls: "lg:col-span-3", size: "md" },
+  { cls: "lg:col-span-3", size: "md" },
+  { cls: "lg:col-span-3", size: "md" },
+] as const;
+
 function Index() {
-  const featured = featuredOrder.map((s) => getProject(s)!).filter(Boolean);
+  const featured = featuredOrder.map((s) => getProject(s)).filter((p) => p !== undefined);
   return (
     <>
-      <section className="mx-auto max-w-6xl px-5 pb-20 pt-16 sm:pt-28">
-        <div className="reveal">
-          <p className="font-display text-lg font-medium">Ifeoluwa Oluwafemi</p>
-          <p className="eyebrow mt-2">Content Strategist · Researcher · Data Analyst</p>
-        </div>
-        <h1 className="reveal mt-10 max-w-5xl text-5xl font-medium leading-[0.98] [animation-delay:100ms] sm:text-7xl lg:text-8xl">
-          I turn complex ideas into <span className="text-primary">stories</span> people understand and{" "}
-          <span className="text-primary">insights</span> they can use.
-        </h1>
-        <div className="reveal mt-12 grid gap-10 [animation-delay:200ms] md:grid-cols-[1fr_auto] md:items-end">
-          <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
-            I'm a multidisciplinary creative and analytical professional working across content marketing, technical
-            research, data analytics, and digital storytelling. I combine clear communication with analytical thinking
-            to help audiences understand products, ideas, and emerging technologies.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              to="/work"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              Explore My Work <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link to="/contact" className="inline-flex items-center rounded-full border px-6 py-3 text-sm font-medium hover:bg-secondary">
-              Get In Touch
-            </Link>
+      <section className="relative overflow-hidden">
+        <div aria-hidden className="grid-lines absolute inset-0" />
+        <div aria-hidden className="glow-orb absolute -left-40 top-20 h-[28rem] w-[28rem] opacity-40" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 pb-24 pt-14 sm:pt-20 lg:grid-cols-[1.25fr_1fr]">
+          <div className="reveal">
+            <p className="font-display text-lg font-medium">Ifeoluwa Oluwafemi</p>
+            <p className="eyebrow mt-2">Content Strategist · Researcher · Data Analyst</p>
+            <h1 className="mt-8 text-4xl font-medium leading-[1.04] sm:text-5xl xl:text-6xl">
+              I turn complex ideas into <span className="font-serif italic text-gradient">stories</span> people understand and{" "}
+              <span className="font-serif italic text-gradient">insights</span> they can use.
+            </h1>
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
+              I work across content marketing, technical research, data analytics and digital storytelling — helping audiences understand products, ideas and emerging technologies.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <Link to="/work" className="inline-flex items-center gap-2 rounded-full bg-gradient-accent px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90">
+                Explore My Work <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link to="/contact" className="inline-flex items-center rounded-full border px-6 py-3 text-sm font-medium hover:bg-secondary">
+                Contact Me
+              </Link>
+            </div>
+            <p className="mt-10 flex items-center gap-3 text-sm text-muted-foreground">
+              <span className="relative flex h-2 w-2 shrink-0">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
+                <span className="relative h-2 w-2 rounded-full bg-primary" />
+              </span>
+              Open to international remote opportunities and selected collaborations.
+            </p>
           </div>
+          <Portrait src={profile.portrait} label="Your portrait goes here" className="reveal mx-auto aspect-[4/5] w-full max-w-md [animation-delay:150ms]" />
         </div>
-        <p className="mt-16 flex items-center gap-3 text-sm text-muted-foreground">
-          <span className="h-2 w-2 shrink-0 rounded-full bg-primary" />
-          Open to international remote opportunities and selected collaborations.
-        </p>
       </section>
 
+      <ImpactSection />
+
       <section className="border-t">
-        <div className="mx-auto max-w-6xl px-5 py-20">
-          <div className="flex flex-wrap items-end justify-between gap-6">
+        <div className="mx-auto max-w-7xl px-5 py-24">
+          <Reveal className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <p className="eyebrow">Selected work</p>
-              <h2 className="mt-3 text-4xl font-medium sm:text-5xl">Content, research & data.</h2>
+              <h2 className="mt-3 text-4xl font-medium sm:text-6xl">
+                Content, research <span className="font-serif italic text-gradient">& data.</span>
+              </h2>
             </div>
             <Link to="/work" className="inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-medium hover:bg-secondary">
               View All Projects <ArrowRight className="h-4 w-4" />
             </Link>
-          </div>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          </Reveal>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-12">
             {featured.map((p, i) => (
-              <ProjectCard key={p.slug} project={p} index={i} />
+              <Reveal key={p.slug} delay={(i % 3) * 90} className={slots[i]?.cls}>
+                <ProjectCard project={p} size={slots[i]?.size ?? "md"} />
+              </Reveal>
             ))}
           </div>
         </div>

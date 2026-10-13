@@ -125,7 +125,7 @@ function useInView<T extends Element>() {
   return [ref, visible] as const;
 }
 
-export function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
+export function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string | undefined; delay?: number }) {
   const [ref, visible] = useInView<HTMLDivElement>();
   return (
     <div ref={ref} data-visible={visible} style={{ transitionDelay: `${delay}ms` }} className={`scroll-reveal ${className}`}>
@@ -221,7 +221,7 @@ export function Preview({ project, className = "" }: { project: Project; classNa
     <div className={`relative h-full w-full overflow-hidden rounded-xl bg-surface ${className}`}>
       <div className="absolute inset-x-[12%] top-[10%] -bottom-6 overflow-hidden rounded-t-md bg-foreground shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-[-1deg]">
         {src ? (
-          <img src={src} alt={`First page of ${project.title}`} loading="lazy" className="h-full w-full scale-[1.7] object-cover object-top" style={{ transformOrigin: "50% 0" }} />
+          <img src={src} alt={`First page of ${project.title}`} loading="lazy" className="h-full w-full scale-[1.4] object-cover object-top" style={{ transformOrigin: "50% 0" }} />
         ) : (
           <UploadPlaceholder label="Upload document preview" className="border-0" />
         )}
@@ -323,7 +323,7 @@ export function VideoGallery() {
               {thumb ? (
                 <img src={thumb} alt={`Thumbnail for ${v.title}`} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
               ) : (
-                <UploadPlaceholder label="Video thumbnail" className="border-0" />
+                <UploadPlaceholder label="Video thumbnail" className="!justify-start border-0 pt-10" />
               )}
               <span className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
               <span className="absolute left-1/2 top-1/2 grid h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-background/60 backdrop-blur transition-transform group-hover:scale-110">
@@ -397,7 +397,7 @@ export function PageIntro({ eyebrow, title, children }: { eyebrow: string; title
   );
 }
 
-export function Portrait({ src, label, className = "" }: { src?: string; label: string; className?: string }) {
+export function Portrait({ src, label, className = "" }: { src?: string | undefined; label: string; className?: string }) {
   return (
     <div className={`relative ${className}`}>
       <div aria-hidden className="glow-orb absolute -inset-10" />
