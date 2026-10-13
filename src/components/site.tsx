@@ -221,7 +221,7 @@ export function Preview({ project, className = "" }: { project: Project; classNa
     <div className={`relative h-full w-full overflow-hidden rounded-xl bg-surface ${className}`}>
       <div className="absolute inset-x-[12%] top-[10%] -bottom-6 overflow-hidden rounded-t-md bg-foreground shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-[-1deg]">
         {src ? (
-          <img src={src} alt={`First page of ${project.title}`} loading="lazy" className="h-full w-full scale-[1.7] object-cover object-top" style={{ transformOrigin: "50% 0" }} />
+          <img src={src} alt={`First page of ${project.title}`} loading="lazy" className="h-full w-full scale-[1.4] object-cover object-top" style={{ transformOrigin: "50% 0" }} />
         ) : (
           <UploadPlaceholder label="Upload document preview" className="border-0" />
         )}

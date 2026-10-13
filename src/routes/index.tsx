@@ -20,10 +20,10 @@ export const Route = createFileRoute("/")({
 const slots = [
   { cls: "lg:col-span-7", size: "lg" },
   { cls: "lg:col-span-5", size: "lg" },
-  { cls: "lg:col-span-4", size: "md" },
-  { cls: "lg:col-span-4", size: "md" },
-  { cls: "lg:col-span-4", size: "md" },
-  { cls: "lg:col-span-12 lg:max-w-sm", size: "tall" },
+  { cls: "lg:col-span-3", size: "md" },
+  { cls: "lg:col-span-3", size: "md" },
+  { cls: "lg:col-span-3", size: "md" },
+  { cls: "lg:col-span-3", size: "md" },
 ] as const;
 
 function Index() {
