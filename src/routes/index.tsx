@@ -7,9 +7,9 @@ import { featuredOrder, getProject, profile } from "@/data/projects";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ifeoluwa Oluwafemi — Content Strategist, Researcher & Data Analyst" },
+      { title: "Ifeoluwa Oluwafemi - Content Strategist, Researcher & Data Analyst" },
       { name: "description", content: "I turn complex ideas into stories people understand and insights they can use." },
-      { property: "og:title", content: "Ifeoluwa Oluwafemi — Content, Research & Data" },
+      { property: "og:title", content: "Ifeoluwa Oluwafemi - Content, Research & Data" },
       { property: "og:description", content: "I turn complex ideas into stories people understand and insights they can use." },
     ],
   }),
@@ -42,7 +42,7 @@ function Index() {
               <span className="font-serif italic text-gradient">insights</span> they can use.
             </h1>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
-              I work across content marketing, technical research, data analytics and digital storytelling — helping audiences understand products, ideas and emerging technologies.
+              I work across content marketing, technical research, data analytics and digital storytelling, helping audiences understand products, ideas and emerging technologies.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link to="/work" className="inline-flex items-center gap-2 rounded-full bg-gradient-accent px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90">
@@ -57,7 +57,7 @@ function Index() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
                 <span className="relative h-2 w-2 rounded-full bg-primary" />
               </span>
-              Open to international remote opportunities and selected collaborations.
+              Open to  opportunities and collaborations.
             </p>
           </div>
           <Portrait src={profile.portrait} label="Your portrait goes here" className="reveal mx-auto aspect-[4/5] w-full max-w-md [animation-delay:150ms]" />

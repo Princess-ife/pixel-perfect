@@ -359,7 +359,7 @@ export function ContactBlock() {
           Have something interesting in mind? <span className="font-serif italic text-gradient">Let's talk.</span>
         </h2>
         <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-          I'm open to international remote opportunities, content collaborations, research projects, and creative partnerships.
+          I'm open to meaningful collaborations, interesting projects, and opportunities to create something impactful.
         </p>
         <p className="mt-10 break-all font-display text-xl sm:text-3xl">{contact.email}</p>
         <div className="mt-6 flex flex-wrap gap-3">
