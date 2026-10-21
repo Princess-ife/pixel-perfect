@@ -84,6 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Ifeoluwa Oluwafemi — Content, Research & Data" },
       { name: "description", content: "Portfolio of Ifeoluwa Oluwafemi, content strategist, researcher and data scientist." },
       { name: "author", content: "Ifeoluwa Oluwafemi" },
+      { name: "google-site-verification", content: "2PbY5tmjOf5d3VJr5gea5l28PPkqSZdFBdjDfLFTq1A" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
