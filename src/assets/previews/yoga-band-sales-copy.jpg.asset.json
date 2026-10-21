@@ -1,11 +1,6 @@
 {
-  "version": 1,
-  "asset_id": "fce75252-f772-4ad7-81b7-10cd3114fc45",
-  "project_id": "f66af2ed-0e14-4ef0-8f7a-5912c4a23417",
-  "url": "/__l5e/assets-v1/fce75252-f772-4ad7-81b7-10cd3114fc45/yoga-band-sales-copy.jpg",
-  "r2_key": "a/v1/f66af2ed-0e14-4ef0-8f7a-5912c4a23417/fce75252-f772-4ad7-81b7-10cd3114fc45/yoga-band-sales-copy.jpg",
-  "original_filename": "yoga-band-sales-copy.jpg",
-  "size": 87131,
-  "content_type": "image/jpeg",
-  "created_at": "2026-10-12T14:53:44Z"
+    "url":  "/images/previews/yoga-band-sales-copy.jpg",
+    "source_url":  "https://docs.google.com/document/d/1SgWMswSjCIuLPbm1V-_ECaGoozRULreO5OWsP6pMHUs/edit",
+    "preview_kind":  "screenshot",
+    "captured_at":  "2026-10-21"
 }

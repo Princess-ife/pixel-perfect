@@ -1,0 +1,152 @@
+{
+  "/images/previews/harmonix-content.jpg": {
+    "src": "/images/optimized/previews/harmonix-content-548.webp",
+    "width": 548,
+    "height": 815,
+    "srcSet": "/images/optimized/previews/harmonix-content-480.webp 480w, /images/optimized/previews/harmonix-content-548.webp 548w"
+  },
+  "/images/previews/iomt-anomaly-detection.jpg": {
+    "src": "/images/optimized/previews/iomt-anomaly-detection-1440.webp",
+    "width": 1440,
+    "height": 1000,
+    "srcSet": "/images/optimized/previews/iomt-anomaly-detection-480.webp 480w, /images/optimized/previews/iomt-anomaly-detection-960.webp 960w, /images/optimized/previews/iomt-anomaly-detection-1440.webp 1440w"
+  },
+  "/images/previews/iomt-research.jpg": {
+    "src": "/images/optimized/previews/iomt-research-1400.webp",
+    "width": 1400,
+    "height": 933,
+    "srcSet": "/images/optimized/previews/iomt-research-480.webp 480w, /images/optimized/previews/iomt-research-960.webp 960w, /images/optimized/previews/iomt-research-1400.webp 1400w"
+  },
+  "/images/previews/kalshi-dashboard.jpg": {
+    "src": "/images/optimized/previews/kalshi-dashboard-1440.webp",
+    "width": 1440,
+    "height": 756,
+    "srcSet": "/images/optimized/previews/kalshi-dashboard-480.webp 480w, /images/optimized/previews/kalshi-dashboard-960.webp 960w, /images/optimized/previews/kalshi-dashboard-1440.webp 1440w"
+  },
+  "/images/previews/kalshi-research.jpg": {
+    "src": "/images/optimized/previews/kalshi-research-1400.webp",
+    "width": 1400,
+    "height": 1867,
+    "srcSet": "/images/optimized/previews/kalshi-research-480.webp 480w, /images/optimized/previews/kalshi-research-960.webp 960w, /images/optimized/previews/kalshi-research-1400.webp 1400w"
+  },
+  "/images/previews/layerzero-article.jpg": {
+    "src": "/images/optimized/previews/layerzero-article-1400.webp",
+    "width": 1400,
+    "height": 933,
+    "srcSet": "/images/optimized/previews/layerzero-article-480.webp 480w, /images/optimized/previews/layerzero-article-960.webp 960w, /images/optimized/previews/layerzero-article-1400.webp 1400w"
+  },
+  "/images/previews/layerzero-content.jpg": {
+    "src": "/images/optimized/previews/layerzero-content-548.webp",
+    "width": 548,
+    "height": 815,
+    "srcSet": "/images/optimized/previews/layerzero-content-480.webp 480w, /images/optimized/previews/layerzero-content-548.webp 548w"
+  },
+  "/images/previews/mall-customer-segmentation.jpg": {
+    "src": "/images/optimized/previews/mall-customer-segmentation-1440.webp",
+    "width": 1440,
+    "height": 1000,
+    "srcSet": "/images/optimized/previews/mall-customer-segmentation-480.webp 480w, /images/optimized/previews/mall-customer-segmentation-960.webp 960w, /images/optimized/previews/mall-customer-segmentation-1440.webp 1440w"
+  },
+  "/images/previews/mantle-analysis.jpg": {
+    "src": "/images/optimized/previews/mantle-analysis-1400.webp",
+    "width": 1400,
+    "height": 787,
+    "srcSet": "/images/optimized/previews/mantle-analysis-480.webp 480w, /images/optimized/previews/mantle-analysis-960.webp 960w, /images/optimized/previews/mantle-analysis-1400.webp 1400w"
+  },
+  "/images/previews/mantle-content.jpg": {
+    "src": "/images/optimized/previews/mantle-content-1200.webp",
+    "width": 1200,
+    "height": 480,
+    "srcSet": "/images/optimized/previews/mantle-content-480.webp 480w, /images/optimized/previews/mantle-content-960.webp 960w, /images/optimized/previews/mantle-content-1200.webp 1200w"
+  },
+  "/images/previews/mantle-industry-research.jpg": {
+    "src": "/images/optimized/previews/mantle-industry-research-1400.webp",
+    "width": 1400,
+    "height": 2494,
+    "srcSet": "/images/optimized/previews/mantle-industry-research-480.webp 480w, /images/optimized/previews/mantle-industry-research-960.webp 960w, /images/optimized/previews/mantle-industry-research-1400.webp 1400w"
+  },
+  "/images/previews/mantlepulse.jpg": {
+    "src": "/images/optimized/previews/mantlepulse-1440.webp",
+    "width": 1440,
+    "height": 1000,
+    "srcSet": "/images/optimized/previews/mantlepulse-480.webp 480w, /images/optimized/previews/mantlepulse-960.webp 960w, /images/optimized/previews/mantlepulse-1440.webp 1440w"
+  },
+  "/images/previews/morpho-research.jpg": {
+    "src": "/images/optimized/previews/morpho-research-1400.webp",
+    "width": 1400,
+    "height": 933,
+    "srcSet": "/images/optimized/previews/morpho-research-480.webp 480w, /images/optimized/previews/morpho-research-960.webp 960w, /images/optimized/previews/morpho-research-1400.webp 1400w"
+  },
+  "/images/previews/other-content.jpg": {
+    "src": "/images/optimized/previews/other-content-548.webp",
+    "width": 548,
+    "height": 743,
+    "srcSet": "/images/optimized/previews/other-content-480.webp 480w, /images/optimized/previews/other-content-548.webp 548w"
+  },
+  "/images/previews/pima-diabetes.jpg": {
+    "src": "/images/optimized/previews/pima-diabetes-1440.webp",
+    "width": 1440,
+    "height": 1000,
+    "srcSet": "/images/optimized/previews/pima-diabetes-480.webp 480w, /images/optimized/previews/pima-diabetes-960.webp 960w, /images/optimized/previews/pima-diabetes-1440.webp 1440w"
+  },
+  "/images/previews/ronin-segmentation.jpg": {
+    "src": "/images/optimized/previews/ronin-segmentation-1440.webp",
+    "width": 1440,
+    "height": 1000,
+    "srcSet": "/images/optimized/previews/ronin-segmentation-480.webp 480w, /images/optimized/previews/ronin-segmentation-960.webp 960w, /images/optimized/previews/ronin-segmentation-1440.webp 1440w"
+  },
+  "/images/previews/spotify-hit-predictor.jpg": {
+    "src": "/images/optimized/previews/spotify-hit-predictor-1440.webp",
+    "width": 1440,
+    "height": 1000,
+    "srcSet": "/images/optimized/previews/spotify-hit-predictor-480.webp 480w, /images/optimized/previews/spotify-hit-predictor-960.webp 960w, /images/optimized/previews/spotify-hit-predictor-1440.webp 1440w"
+  },
+  "/images/previews/sui-ecosystem-health.jpg": {
+    "src": "/images/optimized/previews/sui-ecosystem-health-1440.webp",
+    "width": 1440,
+    "height": 756,
+    "srcSet": "/images/optimized/previews/sui-ecosystem-health-480.webp 480w, /images/optimized/previews/sui-ecosystem-health-960.webp 960w, /images/optimized/previews/sui-ecosystem-health-1440.webp 1440w"
+  },
+  "/images/previews/yoga-band-sales-copy.jpg": {
+    "src": "/images/optimized/previews/yoga-band-sales-copy-1440.webp",
+    "width": 1440,
+    "height": 1000,
+    "srcSet": "/images/optimized/previews/yoga-band-sales-copy-480.webp 480w, /images/optimized/previews/yoga-band-sales-copy-960.webp 960w, /images/optimized/previews/yoga-band-sales-copy-1440.webp 1440w"
+  },
+  "/images/videos/data-science-101.jpg": {
+    "src": "/images/optimized/videos/data-science-101-540.webp",
+    "width": 540,
+    "height": 960,
+    "srcSet": "/images/optimized/videos/data-science-101-480.webp 480w, /images/optimized/videos/data-science-101-540.webp 540w"
+  },
+  "/images/videos/educational.jpg": {
+    "src": "/images/optimized/videos/educational-540.webp",
+    "width": 540,
+    "height": 960,
+    "srcSet": "/images/optimized/videos/educational-480.webp 480w, /images/optimized/videos/educational-540.webp 540w"
+  },
+  "/images/videos/introduction.jpg": {
+    "src": "/images/optimized/videos/introduction-540.webp",
+    "width": 540,
+    "height": 960,
+    "srcSet": "/images/optimized/videos/introduction-480.webp 480w, /images/optimized/videos/introduction-540.webp 540w"
+  },
+  "/images/videos/tech-ugc.jpg": {
+    "src": "/images/optimized/videos/tech-ugc-540.webp",
+    "width": 540,
+    "height": 960,
+    "srcSet": "/images/optimized/videos/tech-ugc-480.webp 480w, /images/optimized/videos/tech-ugc-540.webp 540w"
+  },
+  "/images/profile/ifeoluwa-portrait.jpg": {
+    "src": "/images/optimized/profile/ifeoluwa-portrait-896.webp",
+    "width": 896,
+    "height": 1152,
+    "srcSet": "/images/optimized/profile/ifeoluwa-portrait-480.webp 480w, /images/optimized/profile/ifeoluwa-portrait-896.webp 896w"
+  },
+  "/images/profile/prifea-web3.jpeg": {
+    "src": "/images/optimized/profile/prifea-web3-400.webp",
+    "width": 400,
+    "height": 400,
+    "srcSet": "/images/optimized/profile/prifea-web3-400.webp 400w"
+  }
+}

@@ -2,16 +2,15 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { ContactBlock, Portrait, ProjectCard, Reveal } from "@/components/site";
 import { ImpactSection } from "@/components/impact";
+import { BrandStrip } from "@/components/brand-strip";
 import { featuredOrder, getProject, profile } from "@/data/projects";
+import { pageSeo } from "@/lib/page-seo";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Ifeoluwa Oluwafemi - Content Strategist, Researcher & Data Analyst" },
-      { name: "description", content: "I turn complex ideas into stories people understand and insights they can use." },
-      { property: "og:title", content: "Ifeoluwa Oluwafemi - Content, Research & Data" },
-      { property: "og:description", content: "I turn complex ideas into stories people understand and insights they can use." },
-    ],
+  head: () => pageSeo({
+    path: "/",
+    title: "Ifeoluwa Oluwafemi - Content Strategist, Researcher & Data Scientist",
+    description: "Portfolio of Ifeoluwa Oluwafemi: content strategy, technical research, data science and digital storytelling. Explore projects, writing and collaborations.",
   }),
   component: Index,
 });
@@ -36,7 +35,7 @@ function Index() {
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 pb-24 pt-14 sm:pt-20 lg:grid-cols-[1.25fr_1fr]">
           <div className="reveal">
             <p className="font-display text-lg font-medium">Ifeoluwa Oluwafemi</p>
-            <p className="eyebrow mt-2">Content Strategist · Researcher · Data Analyst</p>
+            <p className="eyebrow mt-2">Content Strategist · Researcher · Data Scientist</p>
             <h1 className="mt-8 text-4xl font-medium leading-[1.04] sm:text-5xl xl:text-6xl">
               I turn complex ideas into <span className="font-serif italic text-gradient">stories</span> people understand and{" "}
               <span className="font-serif italic text-gradient">insights</span> they can use.
@@ -60,10 +59,11 @@ function Index() {
               Open to  opportunities and collaborations.
             </p>
           </div>
-          <Portrait src={profile.portrait} label="Your portrait goes here" className="reveal mx-auto aspect-[4/5] w-full max-w-md [animation-delay:150ms]" />
+          <Portrait src={profile.portrait} priority label="Your portrait goes here" className="reveal mx-auto aspect-[4/5] w-full max-w-md [animation-delay:150ms]" />
         </div>
       </section>
 
+      <BrandStrip />
       <ImpactSection />
 
       <section className="border-t">

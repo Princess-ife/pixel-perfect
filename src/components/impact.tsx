@@ -1,5 +1,7 @@
 import { impact } from "@/data/projects";
-import { Counter, Reveal } from "@/components/site";
+import { Counter, ExternalLink, Reveal } from "@/components/site";
+import { Link } from "@tanstack/react-router";
+import { MetricContext } from "@/components/metric-context";
 
 export function ImpactSection() {
   const { bob, items } = impact;
@@ -13,7 +15,7 @@ export function ImpactSection() {
             Numbers from the work, <span className="font-serif italic text-gradient">attributed to each project.</span>
           </h2>
           <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
-            Self-reported figures from my resume. Audience growth, reported reach, model outputs and research findings are labelled separately.
+            {impact.intro}
           </p>
         </Reveal>
 
@@ -30,6 +32,8 @@ export function ImpactSection() {
               </p>
             </div>
             <BarChart rows={[{ label: "Start", value: bob.before }, { label: "End", value: bob.after }]} max={max} />
+            <p className="mt-8 text-xs leading-relaxed text-muted-foreground">{bob.context}</p>
+            <ExternalLink href={bob.source.url} className="mt-3 inline-block text-xs text-primary underline underline-offset-4">Source: {bob.source.label}</ExternalLink>
           </Reveal>
 
           <div className="grid gap-5 sm:grid-cols-2">
@@ -40,7 +44,10 @@ export function ImpactSection() {
                   <Counter metric={it.metric} />
                 </p>
                 <p className="mt-2 flex-1 text-sm text-muted-foreground">{it.metric.label}</p>
-                <p className="mt-4 text-xs uppercase tracking-widest text-primary">{it.project}</p>
+                <MetricContext metric={it.metric} />
+                {"projectSlug" in it ? (
+                  <Link to="/work/$slug" params={{ slug: it.projectSlug }} hash="project-story" className="mt-4 text-xs uppercase tracking-widest text-primary hover:underline">{it.project} - view project</Link>
+                ) : <p className="mt-4 text-xs uppercase tracking-widest text-primary">{it.project}</p>}
               </Reveal>
             ))}
           </div>

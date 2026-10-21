@@ -1,14 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ContactBlock } from "@/components/site";
+import { pageSeo } from "@/lib/page-seo";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Ifeoluwa Oluwafemi" },
-      { name: "description", content: "Get in touch about remote roles, content collaborations, research projects and creative partnerships." },
-      { property: "og:title", content: "Contact Ifeoluwa Oluwafemi" },
-      { property: "og:description", content: "Have something interesting in mind? Let's talk." },
-    ],
+  head: () => pageSeo({
+    path: "/contact",
+    title: "Contact — Ifeoluwa Oluwafemi",
+    description: "Contact Ifeoluwa Oluwafemi about remote roles, content collaborations, research projects, data science and creative partnerships.",
   }),
-  component: ContactBlock,
+  component: () => <ContactBlock headingLevel={1} />,
 });

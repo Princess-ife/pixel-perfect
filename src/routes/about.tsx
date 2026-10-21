@@ -2,15 +2,13 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Download } from "lucide-react";
 import { PageIntro, Portrait, Reveal } from "@/components/site";
 import { profile } from "@/data/projects";
+import { pageSeo } from "@/lib/page-seo";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About — Ifeoluwa Oluwafemi" },
-      { name: "description", content: "Background and skills of Ifeoluwa Oluwafemi across content, research, data and video." },
-      { property: "og:title", content: "About Ifeoluwa Oluwafemi" },
-      { property: "og:description", content: "Working at the intersection of storytelling, technology, and data." },
-    ],
+  head: () => pageSeo({
+    path: "/about",
+    title: "About — Ifeoluwa Oluwafemi",
+    description: "Meet Ifeoluwa Oluwafemi, also known as PRIFEA in Web3. Explore my background, skills and resume across content, research, data science and video.",
   }),
   component: About,
 });
@@ -28,7 +26,8 @@ function About() {
       <PageIntro eyebrow="About" title="My work sits at the intersection of storytelling, technology, and data." />
       <section className="mx-auto grid max-w-7xl gap-14 px-5 pb-24 md:grid-cols-[1fr_1.6fr]">
         <div>
-          <Portrait src={profile.aboutPhoto ?? profile.portrait} label="Second photo goes here" className="aspect-[3/4] w-full max-w-sm" />
+          <Portrait src={profile.aboutPhoto ?? profile.portrait} label="Second photo goes here" alt={profile.aboutPhotoAlt} fit="contain" className="aspect-[3/4] w-full max-w-sm" />
+          {profile.aboutPhotoCaption && <p className="mt-4 max-w-sm text-center text-sm text-muted-foreground">{profile.aboutPhotoCaption}</p>}
           <div className="mt-8 grid grid-cols-2 gap-3 text-sm">
             {["Writing", "Research", "Data", "Video"].map((d) => (
               <div key={d} className="rounded-xl border bg-card px-4 py-3 font-display">{d}</div>
@@ -36,7 +35,7 @@ function About() {
           </div>
           {profile.resumeUrl ? (
             <a href={profile.resumeUrl} download className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-accent px-6 py-3 text-sm font-medium text-primary-foreground">
-              <Download className="h-4 w-4" /> Download Resume
+              <Download className="h-4 w-4" /> Download Resume (PDF)
             </a>
           ) : (
             <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-dashed px-5 py-2.5 text-xs uppercase tracking-widest text-muted-foreground">

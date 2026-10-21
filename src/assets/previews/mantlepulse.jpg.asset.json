@@ -1,11 +1,6 @@
 {
-  "version": 1,
-  "asset_id": "f85aadbf-f902-418b-ad75-c6c59cdcb131",
-  "project_id": "f66af2ed-0e14-4ef0-8f7a-5912c4a23417",
-  "url": "/__l5e/assets-v1/f85aadbf-f902-418b-ad75-c6c59cdcb131/mantlepulse.jpg",
-  "r2_key": "a/v1/f66af2ed-0e14-4ef0-8f7a-5912c4a23417/f85aadbf-f902-418b-ad75-c6c59cdcb131/mantlepulse.jpg",
-  "original_filename": "mantlepulse.jpg",
-  "size": 59369,
-  "content_type": "image/jpeg",
-  "created_at": "2026-10-12T14:53:30Z"
+    "url":  "/images/previews/mantlepulse.jpg",
+    "source_url":  "https://mantle-pulse.up.railway.app/",
+    "preview_kind":  "screenshot",
+    "captured_at":  "2026-10-21"
 }
